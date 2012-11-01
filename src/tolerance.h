@@ -8,10 +8,15 @@
 
 using namespace std;
 
-float SELECTVAL(int num)
+float SELECTVAL(int num, int grade)
 {
   //Using IT01.txt for testing purposes only
-  ifstream db("IT01.txt");
+  string fnm = "tolerances/IT";
+  stringstream s; s << grade;
+  fnm.append(s.str());
+  fnm.append(".txt");
+
+  ifstream db(fnm.c_str());
 
   string file_line;
   int fn, ln;
